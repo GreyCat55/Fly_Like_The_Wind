@@ -5,7 +5,10 @@ using UnityEngine;
 public class ObstacleEntered : MonoBehaviour
 {
      public void OnTriggerEnter (Collider col){
-         Debug.Log("lost life!");
-        HealthBar.health -= 1;
+        if (col.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("lost life!");
+            HealthBar.health -= 1;
+        }
     }
 }

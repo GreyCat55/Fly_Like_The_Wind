@@ -53,6 +53,9 @@ public class WindPlayerController : MonoBehaviour
             //resizes the scale of the wind
             CreateWindInstance.transform.localScale = new Vector3(mouseVectLength / 5f, mouseVectLength / 3f, mouseVectLength / 5f);
 
+            //sets the created wind instance's strength based on how large the wind instance is
+            CreateWindInstance.GetComponent<WindArea>().Strength = mouseVectLength * 1.1f;
+
             //sets the wind direction by changing values in the WindArea script
 
             windDirX = CreateWindInstance.transform.localScale.x;

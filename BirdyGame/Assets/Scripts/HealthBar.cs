@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class HealthBar : MonoBehaviour {
@@ -46,8 +47,9 @@ public void Update(){
 			bird1.gameObject.SetActive (false);
 			bird2.gameObject.SetActive (false);
 			bird3.gameObject.SetActive (false);
-			gameOver.gameObject.SetActive(true);
-			Time.timeScale = 0;
+			//gameOver.gameObject.SetActive(true);
+			SceneManager.LoadScene("MainMenu");
+			//Time.timeScale = 0;
 			break;
 		}
 }
