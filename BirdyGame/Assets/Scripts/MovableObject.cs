@@ -17,18 +17,18 @@ public class MovableObject : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
-
 	private void FixedUpdate()
 	{
 		if (WindZone != null && InWindZone) //&& WindZone.GetComponent<WindArea>().isLeftClickHeld == true
 		{
 			rb.drag = 1;
 			rb.AddForce(WindZone.GetComponent<WindArea>().Direction * WindZone.GetComponent<WindArea>().Strength);
+
+			if (this.gameObject.tag == "PlayerBird")
+			{
+				float s = Mathf.Floor(gameObject.GetComponent<Rigidbody>().velocity.magnitude * 10);
+				GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().AddScore(Mathf.RoundToInt(s));
+			}
 		}
 		else
 		{
@@ -40,7 +40,7 @@ public class MovableObject : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "WindArea")
 		{
-			WindZone = coll.gameObject; //coll.gameobject is the object colliding with the ball (which is the wind!) 
+			WindZone = coll.gameObject; //coll.gameobject is the wind prefab's rigidbody 
 			InWindZone = true;
 		}
 	}

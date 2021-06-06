@@ -32,6 +32,7 @@ public class ObstacleScroll : MonoBehaviour
             {
                 //Debug.Log("Out of time");
                 timeRemaining = 0;
+                GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>().AddScore(100); 
                 Destroy(gameObject);
             }
         }

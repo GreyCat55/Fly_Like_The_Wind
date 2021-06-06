@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 130977051}
   m_Layer: 5
   m_Name: Score Manager
-  m_TagString: Untagged
+  m_TagString: ScoreManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7259,6 +7259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974335778079341620, guid: a23f683971b79bb47afbfe1189493c14,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerBird
       objectReference: {fileID: 0}
     - target: {fileID: 5316796061698597357, guid: a23f683971b79bb47afbfe1189493c14,
         type: 3}

@@ -7,6 +7,8 @@ TagManager:
   - WindArea
   - Obstacle
   - Wall
+  - ScoreManager
+  - PlayerBird
   layers:
   - Default
   - TransparentFX
